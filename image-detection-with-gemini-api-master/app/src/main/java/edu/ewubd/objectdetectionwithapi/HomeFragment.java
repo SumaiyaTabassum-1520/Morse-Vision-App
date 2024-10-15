@@ -7,8 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.camera.core.processing.SurfaceProcessorNode;
 import androidx.fragment.app.Fragment;
+
+import PdfExtractor.PdfToVoiceActivity;
 
 
 public class HomeFragment extends Fragment {
@@ -45,6 +46,13 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+        Button pdfToVoice = view.findViewById(R.id.buttonSelectPdf);
+        pdfToVoice.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), PdfToVoiceActivity.class);
+            startActivity(intent);
+        });
+
         return view;
+
     }
 }

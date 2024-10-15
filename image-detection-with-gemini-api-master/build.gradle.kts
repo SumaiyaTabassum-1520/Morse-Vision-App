@@ -3,6 +3,7 @@
 plugins {
     id("com.android.application") version "8.5.0" apply false
     id("org.jetbrains.kotlin.android") version "1.5.21" apply false
+    alias(libs.plugins.kotlin.compose) apply false
 }
 
 buildscript {
