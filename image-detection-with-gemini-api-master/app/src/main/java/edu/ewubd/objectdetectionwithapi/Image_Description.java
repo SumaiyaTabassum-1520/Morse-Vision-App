@@ -146,7 +146,7 @@ public class Image_Description extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_PICK_IMAGE || requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == REQUEST_PICK_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             selectedImageUri = data.getData();
             displayImage(selectedImageUri);
         } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK && data != null) {
@@ -170,9 +170,8 @@ public class Image_Description extends AppCompatActivity {
     }
 
     private Uri getImageUri(Bitmap bitmap) {
-        // Implement logic to convert Bitmap to Uri if necessary
-        // Placeholder, implement a correct Uri conversion method for your use case
-        return selectedImageUri;
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "CapturedImage", null);
+        return Uri.parse(path);
     }
 
     private Bitmap getBitmapFromUri(Uri uri) {
