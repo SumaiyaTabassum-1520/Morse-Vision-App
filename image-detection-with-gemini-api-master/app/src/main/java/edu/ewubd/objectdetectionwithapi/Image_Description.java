@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,13 +27,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+
 import java.io.IOException;
 import java.util.Locale;
 
 public class Image_Description extends AppCompatActivity {
 
     private ImageView img;
-    private Button btn, btnTextToSpeech, btnCamera;
     private TextView text;
     private Uri selectedImageUri;
     private static final int REQUEST_PICK_IMAGE = 102;
@@ -40,46 +43,44 @@ public class Image_Description extends AppCompatActivity {
     private static final int REQUEST_CAMERA_PERMISSION = 123;
     private MainViewModel viewModel;
     private ProgressBar progressBar; // Changed from View to ProgressBar for better control
-    private TextToSpeech textToSpeech;
+    private TextToSpeech tts;
+    private GestureDetector gestureDetector;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_description);
 
+
         img = findViewById(R.id.img);
-        btn = findViewById(R.id.btn);
         progressBar = findViewById(R.id.progressBar); // Ensure this matches the correct ID in XML
         text = findViewById(R.id.text);
-        btnTextToSpeech = findViewById(R.id.btnSpeak);
-        btnCamera = findViewById(R.id.btnCamera);
+
 
         // Initialize the ViewModel
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         // Observe the description text
-        viewModel.getDescription().observe(this, description -> text.setText(description));
-
+        viewModel.getDescription().observe(this, description -> {
+            text.setText(description);
+            narrateText("The description of the image is: " + description);
+        });
         // Initialize Text-to-Speech
-        textToSpeech = new TextToSpeech(getApplicationContext(), status -> {
+        tts = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
-                int result = textToSpeech.setLanguage(Locale.UK);
-                if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                    Toast.makeText(this, "Language not supported", Toast.LENGTH_SHORT).show();
-                }
-            } else {
-                Toast.makeText(this, "Text-to-Speech initialization failed", Toast.LENGTH_SHORT).show();
+                tts.setLanguage(Locale.US);
+                narrateText("Single tap to upload photo, double tap to take a picture");
             }
         });
 
-        btnTextToSpeech.setOnClickListener(view -> {
-            String textToSpeak = text.getText().toString();
-            if (!textToSpeak.isEmpty()) {
-                textToSpeech.speak(textToSpeak, TextToSpeech.QUEUE_FLUSH, null, null);
-            } else {
-                Toast.makeText(this, "No text to speak", Toast.LENGTH_SHORT).show();
-            }
+        img.setOnClickListener(v -> choosePicture());
+        img.setOnLongClickListener(v -> {
+            narrateText("Please capture a photo by single click.");
+            takePicture();
+            return true;
         });
+
 
         // Observe the loading state to show or hide the progress bar
         viewModel.getIsLoading().observe(this, isLoading -> {
@@ -89,10 +90,6 @@ public class Image_Description extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
             }
         });
-
-        img.setOnClickListener(v -> choosePicture());
-        btnCamera.setOnClickListener(v -> takePicture());
-        btn.setOnClickListener(v -> describePicture());
     }
 
     private void describePicture() {
@@ -106,7 +103,10 @@ public class Image_Description extends AppCompatActivity {
         }
     }
 
+
     private void choosePicture() {
+        narrateText("Tapped for uploading image");
+        narrateText("Please Select an image");
         Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(pickPhoto, REQUEST_PICK_IMAGE);
     }
@@ -149,6 +149,7 @@ public class Image_Description extends AppCompatActivity {
         if (requestCode == REQUEST_PICK_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             selectedImageUri = data.getData();
             displayImage(selectedImageUri);
+            describePicture();
         } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK && data != null) {
             // Handle camera capture
             Bundle extras = data.getExtras();
@@ -156,16 +157,20 @@ public class Image_Description extends AppCompatActivity {
             if (imageBitmap != null) {
                 img.setImageBitmap(imageBitmap);
                 selectedImageUri = getImageUri(imageBitmap); // Convert bitmap to Uri for further processing
+                describePicture();
             }
         }
     }
 
+
     private void displayImage(Uri uri) {
-        try {
-            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
-            img.setImageBitmap(bitmap);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (uri != null) {
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+                img.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -183,13 +188,20 @@ public class Image_Description extends AppCompatActivity {
         }
     }
 
+    // Method to narrate instructions
+    private void narrateText(String message) {
+        if (tts != null) {
+            tts.speak(message, TextToSpeech.QUEUE_FLUSH, null, null);
+        }
+    }
+
     @Override
     protected void onDestroy() {
         // Cleanup Text-to-Speech resources
-        if (textToSpeech != null) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
-        }
         super.onDestroy();
+        if (tts != null) {
+            tts.stop();
+            tts.shutdown();
+        }
     }
 }
