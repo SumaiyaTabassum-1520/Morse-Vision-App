@@ -29,7 +29,7 @@
             android:label="@string/title_activity_pdf_to_voice"
             android:theme="@style/Theme.ObjectDetectionWithApi" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SignUp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,18 +38,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".Image_Description"
             android:exported="true" />
         <activity
-            android:name=".Morse_Translator"
-            android:exported="true" />
+            android:name=".TextRecognition"
+            android:exported="true"/>
         <activity
             android:name=".Color_Recognition"
             android:exported="true" />
-        <activity
-            android:name=".Magnifier"
-            android:exported="true" />
-
     </application>
 
 </manifest>

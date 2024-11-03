@@ -40,6 +40,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
@@ -47,9 +48,14 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+
+    implementation(libs.play.services.auth)
+    implementation(libs.play.services.tasks)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
     implementation(libs.camera.view)
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.core)
@@ -69,4 +75,8 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+    implementation(libs.vision.common)
+    implementation(libs.play.services.mlkit.text.recognition.common)
+    implementation(libs.play.services.vision.common)
+    implementation(libs.play.services.vision)
 }
