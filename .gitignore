@@ -1,4 +1,5 @@
 *.bin
 *.lock
+*.class
 image-detection-with-gemini-api-master/.gradle/file-system.probe
 image-detection-with-gemini-api-master/.gradle/8.7/
