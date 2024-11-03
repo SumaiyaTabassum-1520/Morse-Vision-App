@@ -10,22 +10,25 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/nav_home"
-            android:title="Home"/>
+            android:title="Home"
+            android:padding="16dp"/>
 
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/nav_settings"
-            android:title="Settings"/>
+            android:title="Settings"
+            android:padding="16dp"/>
 
-        <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/nav_share"
-            android:title="Share"/>
+        <!--        <item-->
+        <!--            android:id="@+id/nav_share"-->
+        <!--            android:icon="@drawable/nav_share"-->
+        <!--            android:title="Share"/>-->
 
         <item
             android:id="@+id/nav_info"
             android:icon="@drawable/nav_info"
-            android:title="Info"/>
+            android:title="Info"
+            android:padding="16dp"/>
     </group>
     <item
         android:title="">
@@ -34,7 +37,7 @@
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/nav_logout"
-                android:title="Logout"/>
+                android:title="Logout" />
         </menu>
 
     </item>
