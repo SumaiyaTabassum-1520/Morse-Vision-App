@@ -6,138 +6,135 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HomeFragment"
-    android:background="@color/green"
-    android:padding="16dp">
-
+    android:padding="10dp">
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Home"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
         tools:ignore="HardcodedText" />
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        tools:ignore="DisableBaselineAlignment">
+        android:layout_height="match_parent"
+        android:importantForAccessibility="yes">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="start">
+            android:gravity="center"
+            tools:ignore="DisableBaselineAlignment">
 
-            <Button
-                android:id="@+id/txt"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:background="@drawable/my_button"
-                android:text="Text Recognition"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                tools:ignore="HardcodedText" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp"
+                android:gravity="start">
+                <Button
+                    android:id="@+id/imgDes"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/my_button"
+                    android:text="Image Description"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText" />
 
-            <!--android:drawableTop="@drawable/logo1"-->
+                <Button
+                    android:id="@+id/txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/my_button"
+                    android:backgroundTint="@color/midBlue"
+                    android:text="Text Recognition"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText" />
+
+                <!--android:drawableTop="@drawable/logo1"-->
+                <Button
+                    android:id="@+id/buttonSelectPdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/my_button"
+                    android:text="Documents"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/color"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/my_button"
+                    android:text="Color Recognition"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText" />
+                <!--android:drawableTop="@drawable/logo2"-->
+                <!--                <Button-->
+                <!--                    android:id="@+id/magnifier"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="150dp"-->
+                <!--                    android:background="@drawable/my_button"-->
+                <!--                    android:text="Magnifier"-->
+                <!--                    android:textSize="20sp"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    android:layout_marginTop="10dp"-->
+                <!--                    tools:ignore="HardcodedText" />-->
+                <!--                &lt;!&ndash;android:drawableTop="@drawable/logo3"&ndash;&gt;-->
+
+                <Button
+                    android:id="@+id/food"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/my_button"
+                    android:text="Food Label"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText" />
+                <!--android:drawableTop="@drawable/logo4"-->
+
+                <!-- Four Buttons in Right Column -->
+
+                <!-- android:drawableTop="@drawable/logo5"-->
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/morse"-->
+                <!--                    android:layout_width="170dp"-->
+                <!--                    android:layout_height="150dp"-->
+                <!--                    android:background="@drawable/my_button"-->
+                <!--                    android:text="Morse Translation"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    android:textSize="20sp"-->
+                <!--                    android:layout_marginTop="10dp"-->
+                <!--                    tools:ignore="HardcodedText" />-->
+                <!--android:drawableTop="@drawable/logo6"-->
 
 
-            <Button
-                android:id="@+id/color"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:background="@drawable/my_button"
-                android:text="Color Recognition"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                tools:ignore="HardcodedText" />
-            <!--android:drawableTop="@drawable/logo2"-->
-            <Button
-                android:id="@+id/magnifier"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:background="@drawable/my_button"
-                android:text="Magnifier"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                tools:ignore="HardcodedText" />
-            <!--android:drawableTop="@drawable/logo3"-->
+                <!--android:drawableTop="@drawable/logo7"-->
+                <Button
+                    android:id="@+id/friend"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/my_button"
+                    android:text="Add Friend"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText" />
+                <!--android:drawableTop="@drawable/logo8"-->
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/food"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:background="@drawable/my_button"
-                android:text="Food Label"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                tools:ignore="HardcodedText" />
-            <!--android:drawableTop="@drawable/logo4"-->
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="end">
-
-            <!-- Four Buttons in Right Column -->
-            <Button
-                android:id="@+id/imgDes"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:background="@drawable/my_button"
-                android:text="Image Description"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                tools:ignore="HardcodedText" />
-            <!-- android:drawableTop="@drawable/logo5"-->
-
-            <Button
-                android:id="@+id/morse"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:background="@drawable/my_button"
-                android:text="Morse Translation"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                tools:ignore="HardcodedText" />
-            <!--android:drawableTop="@drawable/logo6"-->
-
-            <Button
-                android:id="@+id/buttonSelectPdf"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:background="@drawable/my_button"
-                android:text="Documents"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                tools:ignore="HardcodedText" />
-            <!--android:drawableTop="@drawable/logo7"-->
-            <Button
-                android:id="@+id/friend"
-                android:layout_width="170dp"
-                android:layout_height="150dp"
-                android:background="@drawable/my_button"
-                android:text="+Add Friend"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                tools:ignore="HardcodedText" />
-            <!--android:drawableTop="@drawable/logo8"-->
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
