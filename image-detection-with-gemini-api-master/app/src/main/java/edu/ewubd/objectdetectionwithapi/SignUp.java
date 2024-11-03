@@ -1,4 +1,4 @@
-package edu.ewubd.objectdetectionwithapi.ui.theme;
+package edu.ewubd.objectdetectionwithapi;
 
 import static android.content.ContentValues.TAG;
 
@@ -29,9 +29,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.Locale;
 
-import edu.ewubd.objectdetectionwithapi.MainActivity;
-import edu.ewubd.objectdetectionwithapi.R;
-
 public class SignUp extends AppCompatActivity {
 
     SignInClient oneTapClient;
@@ -39,7 +36,7 @@ public class SignUp extends AppCompatActivity {
     Button button;
     private TextToSpeech tts;
     private static final int REQ_ONE_TAP = 2;  // Can be any integer unique to the Activity.
-    private boolean showOneTapUI = true;
+    private final boolean showOneTapUI = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
