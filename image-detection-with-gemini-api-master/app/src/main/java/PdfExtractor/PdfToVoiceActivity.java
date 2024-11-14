@@ -160,8 +160,6 @@ public class PdfToVoiceActivity extends AppCompatActivity {
                     } else {
                         previousBtn.performClick();
                     }
-
-
                 }
         }
         return false;

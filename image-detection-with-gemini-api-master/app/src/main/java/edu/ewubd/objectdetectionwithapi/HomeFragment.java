@@ -65,6 +65,12 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
 
         });
+        Button AddFriend = view.findViewById(R.id.friend);
+        AddFriend.setOnClickListener(v -> {
+            narrateText("Navigating to Add Friend");
+            Intent intent = new Intent(getActivity(), FaceRecognition.AddFriend.class);
+            startActivity(intent);
+        });
         // Set an onClickListener for the button for magnifier
 //        Button Magnifier = view.findViewById(R.id.magnifier);
 //        Magnifier.setOnClickListener(v->{

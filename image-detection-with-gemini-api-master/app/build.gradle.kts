@@ -69,6 +69,9 @@ dependencies {
 
     implementation("com.itextpdf:itextg:5.5.10")
 
+    implementation ("com.google.mlkit:face-detection:16.1.7")
+    implementation ("org.tensorflow:tensorflow-lite:2.11.0")
+
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
