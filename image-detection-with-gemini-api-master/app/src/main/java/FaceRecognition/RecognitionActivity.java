@@ -137,7 +137,7 @@ public class RecognitionActivity extends AppCompatActivity {
         // Create a file to store the image
         File photoFile = createImageFile();
         if (photoFile != null) {
-            cameraImageUri = FileProvider.getUriForFile(this, "your.package.name.fileprovider", photoFile);
+            cameraImageUri = FileProvider.getUriForFile(this, "edu.ewubd.objectdetectionwithapi.fileprovider", photoFile);
             takePicture.putExtra(MediaStore.EXTRA_OUTPUT, cameraImageUri);
             startActivityForResult(takePicture, REQUEST_IMAGE_CAPTURE);
         }
