@@ -19,6 +19,8 @@ public class Morse_Translator extends AppCompatActivity {
     private MorseVibrator morseVibrator;
     private String lastAction = "";  // To track last action (sound or vibrate)
     private String morseCode = "";// Store the encoded Morse code
+    final String[] AlphaNumeric1 = new String[37];
+    final String[] AlphaNumeric = new String[37];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,55 +76,45 @@ public class Morse_Translator extends AppCompatActivity {
         btnRepeat = findViewById(R.id.btnRepeat);
         btnSound = findViewById(R.id.btnSound);
 
-        // initializing string arrays
-        final String[] AlphaNumeric = new String[37];
+//        AlphaNumeric[0] = "A";
+//        AlphaNumeric[1] = "B";
+//        AlphaNumeric[2] = "C";
+//        AlphaNumeric[3] = "D";
+//        AlphaNumeric[4] = "E";
+//        AlphaNumeric[5] = "F";
+//        AlphaNumeric[6] = "G";
+//        AlphaNumeric[7] = "H";
+//        AlphaNumeric[8] = "I";
+//        AlphaNumeric[9] = "J";
+//        AlphaNumeric[10] = "K";
+//        AlphaNumeric[11] = "L";
+//        AlphaNumeric[12] = "M";
+//        AlphaNumeric[13] = "N";
+//        AlphaNumeric[14] = "O";
+//        AlphaNumeric[15] = "P";
+//        AlphaNumeric[16] = "Q";
+//        AlphaNumeric[17] = "R";
+//        AlphaNumeric[18] = "S";
+//        AlphaNumeric[19] = "T";
+//        AlphaNumeric[20] = "U";
+//        AlphaNumeric[21] = "V";
+//        AlphaNumeric[22] = "W";
+//        AlphaNumeric[23] = "X";
+//        AlphaNumeric[24] = "Y";
+//        AlphaNumeric[25] = "Z";
+//        AlphaNumeric[26] = "0";
+//        AlphaNumeric[27] = "1";
+//        AlphaNumeric[28] = "2";
+//        AlphaNumeric[29] = "3";
+//        AlphaNumeric[30] = "4";
+//        AlphaNumeric[31] = "5";
+//        AlphaNumeric[32] = "6";
+//        AlphaNumeric[33] = "7";
+//        AlphaNumeric[34] = "8";
+//        AlphaNumeric[35] = "9";
+//        AlphaNumeric[36] = " ";
 
-        // string array for storing alphabets and numbers
-        final String[] AlphaNumeric1 = new String[37];
 
-        // string array for storing corresponding morse code
-        // assigning alphabets to the string array Alphanumeric[]
-        AlphaNumeric[0] = "A";
-        AlphaNumeric[1] = "B";
-        AlphaNumeric[2] = "C";
-        AlphaNumeric[3] = "D";
-        AlphaNumeric[4] = "E";
-        AlphaNumeric[5] = "F";
-        AlphaNumeric[6] = "G";
-        AlphaNumeric[7] = "H";
-        AlphaNumeric[8] = "I";
-        AlphaNumeric[9] = "J";
-        AlphaNumeric[10] = "K";
-        AlphaNumeric[11] = "L";
-        AlphaNumeric[12] = "M";
-        AlphaNumeric[13] = "N";
-        AlphaNumeric[14] = "O";
-        AlphaNumeric[15] = "P";
-        AlphaNumeric[16] = "Q";
-        AlphaNumeric[17] = "R";
-        AlphaNumeric[18] = "S";
-        AlphaNumeric[19] = "T";
-        AlphaNumeric[20] = "U";
-        AlphaNumeric[21] = "V";
-        AlphaNumeric[22] = "W";
-        AlphaNumeric[23] = "X";
-        AlphaNumeric[24] = "Y";
-        AlphaNumeric[25] = "Z";
-        AlphaNumeric[26] = "0";
-        AlphaNumeric[27] = "1";
-        AlphaNumeric[28] = "2";
-        AlphaNumeric[29] = "3";
-        AlphaNumeric[30] = "4";
-        AlphaNumeric[31] = "5";
-        AlphaNumeric[32] = "6";
-        AlphaNumeric[33] = "7";
-        AlphaNumeric[34] = "8";
-        AlphaNumeric[35] = "9";
-        AlphaNumeric[36] = " ";
-
-        // assigning the corresponding morse code
-        // for each letter and number to
-        // Alphanumeric1[] array
         AlphaNumeric1[0] = ".-";
         AlphaNumeric1[1] = "-...";
         AlphaNumeric1[2] = "-.-.";
@@ -163,24 +155,9 @@ public class Morse_Translator extends AppCompatActivity {
 
 
         btnEncode.setOnClickListener(v -> {
-            String input = etinput.getText().toString().toUpperCase();
-            StringBuilder output = new StringBuilder();
-            morseCode = "";  // Clear previous Morse code
-
-            // Encoding logic (same as before)
-            for (int i = 0; i < input.length(); i++) {
-                String ch = input.substring(i, i + 1);
-                for (int j = 0; j < AlphaNumeric.length; j++) {
-                    if (ch.equals(AlphaNumeric[j])) {
-                        output.append(AlphaNumeric1[j]).append(" ");
-                        break;
-                    }
-                }
-            }
-            morseCode = output.toString();  // Store the encoded Morse code
-            etoutput.setText(morseCode);    // Display in EditText
+            String morseCode = morseTranslate();
+            displayOutput(morseCode);
         });
-
         btnSound.setOnClickListener(v -> {
             String input = etinput.getText().toString().toUpperCase();
             StringBuilder output = new StringBuilder();
@@ -333,6 +310,27 @@ public class Morse_Translator extends AppCompatActivity {
             etoutput.setText(output);
         });
     }
+
+    private String getInput() {
+        return etinput.getText().toString().toUpperCase();
+    }
+    public String morseTranslate(){
+         String text = getInput();
+        StringBuilder output = new StringBuilder();
+        morseCode = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) >= 'A' && text.charAt(i) <= 'Z') {
+                output.append(AlphaNumeric1[text.charAt(i) - 'A']);
+            }
+        }
+        morseCode = output.toString();
+        return text;
+    }
+    private void displayOutput(String morseCode) {
+        etoutput.setText(morseCode);
+    }
+
+
     private void playMorseCodeSound(String morseCode) {
         new Thread(() -> {
             for (char symbol : morseCode.toCharArray()) {
