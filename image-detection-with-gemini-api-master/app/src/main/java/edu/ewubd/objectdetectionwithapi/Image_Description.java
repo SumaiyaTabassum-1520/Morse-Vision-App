@@ -1,6 +1,7 @@
 package edu.ewubd.objectdetectionwithapi;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -45,13 +46,16 @@ public class Image_Description extends AppCompatActivity {
     private ProgressBar progressBar; // Changed from View to ProgressBar for better control
     private TextToSpeech tts;
     private GestureDetector gestureDetector;
+    private Morse_Translator morseTranslator;
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_description);
 
+        morseTranslator = new Morse_Translator();
 
         img = findViewById(R.id.img);
         progressBar = findViewById(R.id.progressBar); // Ensure this matches the correct ID in XML
@@ -81,6 +85,20 @@ public class Image_Description extends AppCompatActivity {
             return true;
         });
 
+//       
+        progressBar.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                // Start the translation when the user taps and holds
+                String morseCode = morseTranslator.morseTranslate();
+                // Display the Morse code, for example, using Toast or Vibrator
+                Toast.makeText(this, "Morse Code: " + morseCode, Toast.LENGTH_SHORT).show();
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                // End the translation when the user releases
+            }
+            return true;
+        });
+
+
 
         // Observe the loading state to show or hide the progress bar
         viewModel.getIsLoading().observe(this, isLoading -> {
@@ -91,6 +109,7 @@ public class Image_Description extends AppCompatActivity {
             }
         });
     }
+
 
     private void describePicture() {
         if (selectedImageUri == null) {
