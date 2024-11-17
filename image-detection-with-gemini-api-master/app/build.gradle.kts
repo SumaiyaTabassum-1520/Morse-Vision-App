@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.play.services.auth)
     implementation(libs.play.services.tasks)
+    implementation(libs.room.compiler)
+    implementation(libs.play.services.mlkit.face.detection)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -68,6 +70,9 @@ dependencies {
     implementation("org.reactivestreams:reactive-streams:1.0.4")
 
     implementation("com.itextpdf:itextg:5.5.10")
+
+    implementation ("com.google.mlkit:face-detection:16.1.7")
+    implementation ("org.tensorflow:tensorflow-lite:2.11.0")
 
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
