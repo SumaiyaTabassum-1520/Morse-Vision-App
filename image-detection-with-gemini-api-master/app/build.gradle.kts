@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.play.services.auth)
     implementation(libs.play.services.tasks)
+    implementation(libs.room.compiler)
+    implementation(libs.play.services.mlkit.face.detection)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
