@@ -1,49 +1,29 @@
 package edu.ewubd.objectdetectionwithapi;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
+import android.os.Handler;
+import android.os.Looper;
 import android.speech.tts.TextToSpeech;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.google.android.gms.auth.api.identity.BeginSignInRequest;
-import com.google.android.gms.auth.api.identity.Identity;
-import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.material.navigation.NavigationView;
 
-import java.io.IOException;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
-    Switch darkModeSwitch;
     private TextToSpeech tts;
 
 
@@ -55,17 +35,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Toolbar toul = findViewById(R.id.toolbar);
         setSupportActionBar(toul);
-        darkModeSwitch = findViewById(R.id.dark_mode_switch);
-
-        darkModeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); // Enable dark mode
-                narrateText("Dark mode enabled.");
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); // Disable dark mode
-                narrateText("Dark mode Disabled.");
-            }
-        });
 
         drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -99,8 +68,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        } else if (id == R.id.nav_share) {
 //            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ShareFragment()).commit();
         } else if (id == R.id.nav_info) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InfoFragment()).commit();
-            narrateText("Info");
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new LearnMorse()).commit();
+            narrateText("Learn Morse Code");
         } else if (id == R.id.nav_logout) {
             Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
             narrateText("logging out");

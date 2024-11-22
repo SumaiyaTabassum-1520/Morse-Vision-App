@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Object detection with api</string>
+    <string name="app_name">Morse Vision</string>
     <string name="open_nav">Open Navigation</string>
     <string name="close_nav">Close Navigation</string>
     <string name="web_client_id">543088233146-3749insfuotnhn2fn1s6n2um56e20hhg.apps.googleusercontent.com</string>

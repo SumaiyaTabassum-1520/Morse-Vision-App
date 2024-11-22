@@ -42,5 +42,3 @@ public class GeminiRepository {
         return executor;
     }
 }
-
-

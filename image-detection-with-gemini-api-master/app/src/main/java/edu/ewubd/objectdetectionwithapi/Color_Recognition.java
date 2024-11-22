@@ -54,10 +54,8 @@ public class Color_Recognition extends AppCompatActivity {
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            // Request the camera permission
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 100);
         } else {
-            // Initialize CameraX
             initializeCamera();
         }
 
@@ -132,15 +130,12 @@ public class Color_Recognition extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
         int pixel = bitmap.getPixel(bitmap.getWidth() / 2, bitmap.getHeight() / 2);
 
-        // Extract color components
         int red = Color.red(pixel);
         int green = Color.green(pixel);
         int blue = Color.blue(pixel);
 
-        // Get the color name using the helper class
         String colorName = ColorUtils.getColorNameFromRgb(red, green, blue);
         speakColorName(colorName);
-        // Show the recognized color name
         runOnUiThread(() -> {
             colorInfo.setText("Recognized Color: " + colorName);
             colorInfo.setBackgroundColor(Color.rgb(red, green, blue));

@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
@@ -45,12 +46,17 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         button=findViewById(R.id.btn_signup);
+
         tts = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
                 tts.setLanguage(Locale.US);
                 narrateText("Tap the button to sign in with Google");
+            }else {
+                Log.e("TTS", "Initialization failed");
             }
+
         });
+
         oneTapClient = Identity.getSignInClient(this);
         signUpRequest = BeginSignInRequest.builder()
                 .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
@@ -76,8 +82,8 @@ public class SignUp extends AppCompatActivity {
 //                          Toast.makeText(getApplicationContext(),"Email: "+email, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
-                            narrateText("Welcome to the app. Select any activity");
-                            finish();
+                            narrateText("Welcome to the Morse vision app. Select any activity");
+                            new Handler().postDelayed(() -> finish(), 2000);
                         }
                     } catch (ApiException e) {
                         e.printStackTrace();
@@ -86,33 +92,29 @@ public class SignUp extends AppCompatActivity {
                 }
             }
         });
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        button.setOnClickListener(view ->
                 oneTapClient.beginSignIn(signUpRequest)
-                        .addOnSuccessListener(SignUp.this, new OnSuccessListener<BeginSignInResult>() {
-                            @Override
-                            public void onSuccess(BeginSignInResult result) {
-                                narrateText("Choose an account.");
-                                IntentSenderRequest intentSenderRequest = new IntentSenderRequest.Builder(result.getPendingIntent().getIntentSender()).build();
-                                activityResultLauncher.launch(intentSenderRequest);
-
-                            }
-                        })
-                        .addOnFailureListener(SignUp.this, new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // No saved credentials found. Launch the One Tap sign-up flow, or
-                                // do nothing and continue presenting the signed-out UI.
-                                Log.d(TAG, e.getLocalizedMessage());
-                            }
-                        });
-            }
-        });
+                .addOnSuccessListener(SignUp.this, new OnSuccessListener<BeginSignInResult>() {
+                    @Override
+                    public void onSuccess(BeginSignInResult result) {
+                        narrateText("Choose an account.");
+                        IntentSenderRequest intentSenderRequest = new IntentSenderRequest.Builder(result.getPendingIntent().getIntentSender()).build();
+                        activityResultLauncher.launch(intentSenderRequest);
+                    }
+                })
+                .addOnFailureListener(SignUp.this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // No saved credentials found. Launch the One Tap sign-up flow, or
+                        // do nothing and continue presenting the signed-out UI.
+                        narrateText("Sign-in failed. Please try again.");
+                        Log.d(TAG, e.getLocalizedMessage());
+                    }
+                }));
     }
     // Method to narrate instructions
     private void narrateText(String message) {
-        if (tts != null) {
+        if (tts != null && !tts.isSpeaking()) {
             tts.speak(message, TextToSpeech.QUEUE_FLUSH, null, null);
         }
     }

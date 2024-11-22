@@ -30,40 +30,29 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // Set an onClickListener for the button for image description
         Button imageDescriptionButton = view.findViewById(R.id.imgDes);
         imageDescriptionButton.setOnClickListener(v -> {
             narrateText("Navigating to Image Description");
-            // Intent to navigate to Image Description activity
             Intent intent = new Intent(getActivity(), Image_Description.class);
             startActivity(intent);
         });
         Button textRecognition = view.findViewById(R.id.txt);
         textRecognition.setOnClickListener(v -> {
             narrateText("Navigating to Text Recognition Single tap to capture image");
-            // Intent to navigate to Image Description activity
             Intent intent = new Intent(getActivity(), TextRecognition.class);
             startActivity(intent);
         });
-        // Set an onClickListener for the button for Morse translation
-//        Button morseTranslationButton = view.findViewById(R.id.morse);
-//        morseTranslationButton.setOnClickListener(v->{
-//            Intent intent=new Intent (getActivity(),Morse_Translator.class);
-//            startActivity(intent);
-//        });
         Button pdfToVoice = view.findViewById(R.id.buttonSelectPdf);
         pdfToVoice.setOnClickListener(v -> {
             narrateText("Navigating to Documents reader");
             Intent intent = new Intent(getActivity(), PdfToVoiceActivity.class);
             startActivity(intent);
         });
-        // Set an onClickListener for the button for Color recognition
         Button colorRecognitionButton = view.findViewById(R.id.color);
         colorRecognitionButton.setOnClickListener(v->{
             narrateText("Navigating to Color Recognition");
             Intent intent = new Intent(getActivity(),Color_Recognition.class);
             startActivity(intent);
-
         });
         Button AddFriend = view.findViewById(R.id.friend);
         AddFriend.setOnClickListener(v -> {
@@ -79,7 +68,7 @@ public class HomeFragment extends Fragment {
 //        });
         return view;
     }
-    // Helper method to narrate text
+
     private void narrateText(String message) {
         if (tts != null) {
             tts.speak(message, TextToSpeech.QUEUE_FLUSH, null, null);

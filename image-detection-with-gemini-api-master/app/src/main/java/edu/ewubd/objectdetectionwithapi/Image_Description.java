@@ -3,11 +3,13 @@ package edu.ewubd.objectdetectionwithapi;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -23,20 +25,33 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
+import androidx.core.content.FileProvider;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.preference.PreferenceManager;
 
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
+import com.google.ai.client.generativeai.type.GenerateContentResponse;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.CancellationException;
 
 public class Image_Description extends AppCompatActivity {
 
     private ImageView img;
     private TextView text;
-    private Uri selectedImageUri;
+    private Uri selectedImageUri, cameraImageUri;
     private static final int REQUEST_PICK_IMAGE = 102;
     private static final int REQUEST_IMAGE_CAPTURE = 101;
     private static final int REQUEST_CAMERA_PERMISSION = 123;
@@ -45,9 +60,13 @@ public class Image_Description extends AppCompatActivity {
     private TextToSpeech tts;
     private GestureDetector gestureDetector;
     private Morse_Translator morseTranslator;
+    private MorseVibrator vibrate;
+    private final GeminiRepository geminiRepository = new GeminiRepository();
+    private String morseCode="";
+    private String description = "";
+    private boolean requestOnGoing = false; //I will ever do this again ever
 
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +77,7 @@ public class Image_Description extends AppCompatActivity {
         img = findViewById(R.id.img);
         progressBar = findViewById(R.id.progressBar); // Ensure this matches the correct ID in XML
         text = findViewById(R.id.text);
-
+        vibrate = new MorseVibrator(getApplicationContext());
 
         // Initialize the ViewModel
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
@@ -67,6 +86,16 @@ public class Image_Description extends AppCompatActivity {
         viewModel.getDescription().observe(this, description -> {
             text.setText(description);
             narrateText("The description of the image is: " + description);
+            // Check if Morse Vibration Mode is enabled
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            boolean isMorseVibrationEnabled = sharedPreferences.getBoolean("morse_vibration_mode", false);
+
+            if (isMorseVibrationEnabled && !description.isEmpty()) {
+                morseCode = morseTranslator.morseTranslate(description);
+
+                // Run vibration logic in a background thread
+                new Thread(() -> vibrate.vibrateMorseCode(morseCode)).start();
+            }
         });
         // Initialize Text-to-Speech
         tts = new TextToSpeech(this, status -> {
@@ -83,18 +112,14 @@ public class Image_Description extends AppCompatActivity {
             return true;
         });
 
-//       
-        progressBar.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                // Start the translation when the user taps and holds
-                String morseCode = morseTranslator.morseTranslate();
-                // Display the Morse code, for example, using Toast or Vibrator
-                Toast.makeText(this, "Morse Code: " + morseCode, Toast.LENGTH_SHORT).show();
-            } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                // End the translation when the user releases
-            }
-            return true;
-        });
+
+//        text.setOnTouchListener((v, event) -> {
+//            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+//                Toast.makeText(this, "Morse Code: " + morseCode, Toast.LENGTH_SHORT).show();
+//            }else if (event.getAction() == MotionEvent.ACTION_UP) {
+//            }
+//            return true;
+//        });
 
 
 
@@ -112,12 +137,42 @@ public class Image_Description extends AppCompatActivity {
     private void describePicture() {
         if (selectedImageUri == null) {
             Toast.makeText(this, "Please select an image", Toast.LENGTH_SHORT).show();
-            return;
         }
         Bitmap bitmap = getBitmapFromUri(selectedImageUri);
-        if (bitmap != null) {
-            viewModel.describePicture(bitmap);
+        if (bitmap == null) {
+            Toast.makeText(this, "Please try again", Toast.LENGTH_SHORT).show();
         }
+        viewModel.setIsloading(true);
+        getDescriptionFromGeminiImageApi(bitmap);
+    }
+    private void handleResponse(boolean isSuccessful,String description){
+        viewModel.setIsloading(false);
+        if(isSuccessful){
+            morseCode = new Morse_Translator().morseTranslate(description);
+            viewModel.setDescription(description);
+//            if (vibrate != null){
+//                vibrate.vibrateMorseCode(morseCode);
+//            }
+            return;
+        }
+        viewModel.setDescription(description);
+    }
+
+    public void getDescriptionFromGeminiImageApi(Bitmap bitmap) {
+        description = "";
+        requestOnGoing = true;
+        Futures.addCallback(geminiRepository.generateDescription(bitmap), new FutureCallback<GenerateContentResponse>() {
+            @Override
+            public void onSuccess(GenerateContentResponse result) {
+                handleResponse(true,result.getText());
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                description = "Error: " + t.getMessage();
+                handleResponse(false, description);
+            }
+        }, geminiRepository.getExecutor());
     }
 
 
@@ -129,7 +184,6 @@ public class Image_Description extends AppCompatActivity {
     }
 
     private void takePicture() {
-        // Request camera permission if needed
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
@@ -143,8 +197,23 @@ public class Image_Description extends AppCompatActivity {
 
     private void openCamera() {
         Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePicture.resolveActivity(getPackageManager()) != null) {
+        // Create a file to store the image
+        File photoFile = createImageFile();
+        if (photoFile != null) {
+            cameraImageUri = FileProvider.getUriForFile(this, "edu.ewubd.objectdetectionwithapi.fileprovider", photoFile);
+            takePicture.putExtra(MediaStore.EXTRA_OUTPUT, cameraImageUri);
             startActivityForResult(takePicture, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+    private File createImageFile() {
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        try {
+            return File.createTempFile(imageFileName, ".jpg", storageDir);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
@@ -167,18 +236,16 @@ public class Image_Description extends AppCompatActivity {
             selectedImageUri = data.getData();
             displayImage(selectedImageUri);
             describePicture();
-        } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK && data != null) {
-            // Handle camera capture
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            if (imageBitmap != null) {
-                img.setImageBitmap(imageBitmap);
-                selectedImageUri = getImageUri(imageBitmap); // Convert bitmap to Uri for further processing
+        } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            if (cameraImageUri != null) {
+                selectedImageUri = cameraImageUri;
+                displayImage(cameraImageUri);
                 describePicture();
+            } else {
+                Toast.makeText(this, "Failed to capture image", Toast.LENGTH_SHORT).show();
             }
         }
     }
-
 
     private void displayImage(Uri uri) {
         if (uri != null) {
@@ -205,17 +272,27 @@ public class Image_Description extends AppCompatActivity {
         }
     }
 
-    // Method to narrate instructions
     private void narrateText(String message) {
         if (tts != null) {
             tts.speak(message, TextToSpeech.QUEUE_FLUSH, null, null);
         }
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (vibrate != null) {
+            vibrate.stopVibration(); // Stop vibration when activity is paused
+        }
+    }
 
     @Override
     protected void onDestroy() {
-        // Cleanup Text-to-Speech resources
         super.onDestroy();
+        if (vibrate != null) {
+            vibrate.stopVibration(); // Ensure vibration stops on destroy
+        }
+
+        // Cleanup Text-to-Speech resources
         if (tts != null) {
             tts.stop();
             tts.shutdown();

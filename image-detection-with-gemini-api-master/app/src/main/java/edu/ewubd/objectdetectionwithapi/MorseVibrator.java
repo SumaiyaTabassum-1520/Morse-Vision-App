@@ -12,14 +12,18 @@ public class MorseVibrator {
     private static final long LETTER_SPACE_DURATION = 800; // Pause between letters
 
     private Vibrator vibrator;
+    private boolean isStopped = false;
 
-    // Constructor to initialize the Vibrator service
     public MorseVibrator(Context context) {
         vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
     }
+
+
     // Method to vibrate Morse code based on input text
     public void vibrateMorseCode(String morseCode) {
+        isStopped = false; // Reset the flag before starting vibration
         for (char symbol : morseCode.toCharArray()) {
+            if (isStopped) break;
             switch (symbol) {
                 case '.': // Dot
                     vibrate(DOT_DURATION);
@@ -35,6 +39,7 @@ public class MorseVibrator {
                     }
                     break;
             }
+            if (isStopped) break;
             // Short pause between symbols of the same letter
             try {
                 Thread.sleep(SPACE_DURATION);
@@ -51,6 +56,12 @@ public class MorseVibrator {
             } else {
                 vibrator.vibrate(duration);
             }
+        }
+    }
+    public void stopVibration() {
+        isStopped = true; // Set the flag to stop vibration
+        if (vibrator != null) {
+            vibrator.cancel(); // Stop any ongoing vibration
         }
     }
 }
