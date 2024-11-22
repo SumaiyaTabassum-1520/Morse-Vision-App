@@ -24,28 +24,51 @@
         android:theme="@style/Theme.ObjectDetectionWithApi"
         tools:targetApi="31">
         <activity
+            android:name=".MoneyRecognitionActivity"
+            android:exported="false" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="edu.ewubd.objectdetectionwithapi.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="FaceRecognition.AddFriend"
+            android:exported="false" />
+        <activity
+            android:name="FaceRecognition.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="FaceRecognition.RecognitionActivity"
+            android:exported="false" />
+        <activity
             android:name="PdfExtractor.PdfToVoiceActivity"
             android:exported="false"
             android:label="@string/title_activity_pdf_to_voice"
             android:theme="@style/Theme.ObjectDetectionWithApi" />
         <activity
-            android:name=".SignUp"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+        </activity> <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:exported="true" /> -->
         <activity
             android:name=".Image_Description"
             android:exported="true" />
         <activity
             android:name=".TextRecognition"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".Color_Recognition"
             android:exported="true" />

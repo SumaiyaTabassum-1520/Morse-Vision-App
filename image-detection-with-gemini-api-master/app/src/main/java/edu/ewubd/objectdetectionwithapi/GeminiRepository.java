@@ -29,6 +29,14 @@ public class GeminiRepository {
 
         return model.generateContent(content);
     }
+    public ListenableFuture<GenerateContentResponse> detectCurrency(Bitmap bitmap) {
+        Content content = new Content.Builder()
+                .addText("Identify the type and value of the currency in the image. If no currency is detected, respond with: 'No currency on the given picture'")
+                .addImage(bitmap)
+                .build();
+
+        return model.generateContent(content);
+    }
 
     public Executor getExecutor() {
         return executor;
