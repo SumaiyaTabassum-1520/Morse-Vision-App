@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.play.services.tasks)
     implementation(libs.room.compiler)
     implementation(libs.play.services.mlkit.face.detection)
+    implementation(libs.preference)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

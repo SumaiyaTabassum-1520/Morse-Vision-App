@@ -25,10 +25,11 @@
             android:id="@+id/recognize_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/lavender"
             android:text="Recognize"
-            android:textSize="18sp"
             android:textColor="@android:color/white"
-            android:background="@android:color/holo_blue_dark"/>
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck" />
 
     </androidx.cardview.widget.CardView>
 
@@ -48,10 +49,11 @@
             android:id="@+id/register_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/LightGreen"
             android:text="Register"
-            android:textSize="18sp"
             android:textColor="@android:color/white"
-            android:background="@android:color/holo_green_dark"/>
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck" />
 
     </androidx.cardview.widget.CardView>
 
