@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
 }
+configurations.all{
+    exclude(group ="com.intellij", module = "annotations")
+}
 
 android {
     namespace = "edu.ewubd.objectdetectionwithapi"
