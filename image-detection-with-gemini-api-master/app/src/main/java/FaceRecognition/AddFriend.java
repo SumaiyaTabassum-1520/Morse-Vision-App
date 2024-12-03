@@ -1,7 +1,5 @@
 package FaceRecognition;
 
-import static java.security.AccessController.getContext;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -10,13 +8,10 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Locale;
 
-import edu.ewubd.objectdetectionwithapi.R;
+import edu.ewubd.morsevision.R;
 
 public class AddFriend extends AppCompatActivity {
     Button register, recongize;

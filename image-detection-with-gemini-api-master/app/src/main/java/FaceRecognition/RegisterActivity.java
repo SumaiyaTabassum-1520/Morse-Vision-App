@@ -52,7 +52,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import edu.ewubd.objectdetectionwithapi.R;
+import edu.ewubd.morsevision.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

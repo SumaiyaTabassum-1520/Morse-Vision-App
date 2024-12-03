@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        android:key="morse_vibration_mode"
+        android:title="Enable Morse Vibration Mode"
+        android:summary="Automatically vibrate image description in Morse code when enabled"
+        android:defaultValue="false"/>
+    <SwitchPreferenceCompat
+        android:key="light_mode"
+        android:title="Enable Dark Mode"
+        android:summary="Switch between light and dark mode"
+        android:defaultValue="false" />
+
+</androidx.preference.PreferenceScreen>

@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Object detection with api"
+rootProject.name = "Morse Vision"
 include(":app")

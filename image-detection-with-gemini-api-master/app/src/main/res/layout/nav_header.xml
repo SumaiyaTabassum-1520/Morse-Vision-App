@@ -10,17 +10,14 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    <ImageView
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:paddingTop="23dp"
-        android:src="@drawable/logo_new" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:text="My Eye"
+        android:layout_marginLeft="20dp"
+        android:text="Morse Vision"
         android:textColor="#0085FF"
         android:textSize="40sp"
         android:textStyle="bold" />

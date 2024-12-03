@@ -3,3 +3,4 @@
 *.class
 image-detection-with-gemini-api-master/.gradle/file-system.probe
 image-detection-with-gemini-api-master/.gradle/8.7/
+image-detection-with-gemini-api-master/app/src/main/res/mipmap-hdpi/ic_launcher_app_logo.webp

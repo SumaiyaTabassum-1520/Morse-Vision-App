@@ -6,11 +6,11 @@ configurations.all{
 }
 
 android {
-    namespace = "edu.ewubd.objectdetectionwithapi"
+    namespace = "edu.ewubd.morsevision"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "edu.ewubd.objectdetectionwithapi"
+        applicationId = "edu.ewubd.morsevision"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.play.services.tasks)
     implementation(libs.room.compiler)
     implementation(libs.play.services.mlkit.face.detection)
+    implementation(libs.preference)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -30,7 +31,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="edu.ewubd.objectdetectionwithapi.fileprovider"
+            android:authorities="edu.ewubd.morsevision.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -53,25 +54,27 @@
             android:label="@string/title_activity_pdf_to_voice"
             android:theme="@style/Theme.ObjectDetectionWithApi" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SignUp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- <activity -->
-        <!-- android:name=".MainActivity" -->
-        <!-- android:exported="true" /> -->
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
         <activity
             android:name=".Image_Description"
             android:exported="true" />
         <activity
             android:name=".TextRecognition"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".Color_Recognition"
             android:exported="true" />
     </application>
+
 
 </manifest>

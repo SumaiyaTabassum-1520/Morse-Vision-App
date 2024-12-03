@@ -47,23 +47,4 @@
         android:layout_gravity="center"
         android:visibility="gone" />
 
-    <!-- Button to trigger the description generation -->
-    <!--        <Button-->
-    <!--            android:id="@+id/btn"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:backgroundTint="@color/naviBlue"-->
-    <!--            android:textSize="20sp"-->
-    <!--            android:text="Describe Image" />-->
-    <!--        <Button-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:backgroundTint="@color/naviBlue"-->
-    <!--            android:text="text to speech"-->
-    <!--            android:textSize="20sp"-->
-    <!--            android:id="@+id/btnSpeak"/>-->
-
-
 </LinearLayout>

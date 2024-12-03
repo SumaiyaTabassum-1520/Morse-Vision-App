@@ -1,0 +1,2291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Example for one letter -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".-"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakA"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundA"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:contentDescription="Dot and Dash Sound"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateA"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-..."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakB"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundB"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:contentDescription="Dot and Dash Sound"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateB"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-.-."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakC"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundC"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:contentDescription="Dot and Dash Sound"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateC"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-.."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+
+            <ImageButton
+                android:id="@+id/btnSpeakD"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundD"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:contentDescription="Dot and Dash Sound"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateD"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="F ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..-."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakF"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundF"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateF"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="G ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakG"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundG"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateG"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="H ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="...."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakH"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundH"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateH"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakI"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundI"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateI"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="J ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".---"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakJ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundJ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateJ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="K ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-.-"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakK"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundK"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateK"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="L ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".-.."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakL"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundL"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateL"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakM"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundM"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateM"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakN"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundN"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateN"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".--."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakP"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundP"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateP"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--.-"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakQ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundQ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateQ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".-."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakR"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundR"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateR"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakS"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundS"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateS"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakT"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundT"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateT"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="U ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..-"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakU"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundU"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateU"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="V ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="...-"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakV"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundV"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateV"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="W ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".--"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakW"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundW"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateW"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-..-"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakX"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundX"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateX"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Y ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-.--"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakY"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundY"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateY"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Z ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--.."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakZ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundZ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateZ"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterZERO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseZERO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-----"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakZERO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundZERO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateZERO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterONE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseONE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".----"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakONE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundONE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateONE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterTWO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseTWO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..---"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakTWO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundTWO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateTWO"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterTHREE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseTHREE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="...--"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakTHREE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundTHREE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateTHREE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterFOUR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseFOUR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="....-"
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakFOUR"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundFOUR"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateFOUR"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterFIVE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseFIVE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="....."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakFIVE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundFIVE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateFIVE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterSIX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseSIX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-...."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakSIX"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundSIX"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateSIX"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterSEVEN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseSEVEN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--..."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakSEVEN"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundSEVEN"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateSEVEN"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterEIGHT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseEIGHT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---.."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakEIGHT"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundEIGHT"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateEIGHT"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Letter -->
+            <TextView
+                android:id="@+id/letterNINE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9 ="
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Morse Code -->
+            <TextView
+                android:id="@+id/morseNINE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="----."
+                android:textSize="40sp"
+                android:layout_marginEnd="20dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakNINE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_speak"
+                android:contentDescription="Speak"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnSoundNINE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_dot_dash"
+                android:scaleType="centerInside"
+                android:background="@drawable/rounded_button"
+                android:contentDescription="Sound"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/btnVibrateNINE"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_vibration"
+                android:contentDescription="Vibrate"
+                android:background="@drawable/rounded_button"
+                android:scaleType="centerInside"
+                android:padding="8dp" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
