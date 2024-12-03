@@ -1,14 +1,8 @@
-package edu.ewubd.objectdetectionwithapi;
+package edu.ewubd.morsevision;
 
 
-import android.media.AudioAttributes;
 import android.media.SoundPool;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.Button;
-import android.widget.EditText;
-import androidx.appcompat.app.AppCompatActivity;
+
 public class Morse_Translator{
     // initialize variables
 

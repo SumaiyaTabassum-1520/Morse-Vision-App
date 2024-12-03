@@ -36,7 +36,7 @@ import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import edu.ewubd.objectdetectionwithapi.R;
+import edu.ewubd.morsevision.R;
 
 public class PdfToVoiceActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package edu.ewubd.objectdetectionwithapi;
+package edu.ewubd.morsevision;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

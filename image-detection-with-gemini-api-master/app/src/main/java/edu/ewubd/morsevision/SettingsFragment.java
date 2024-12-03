@@ -1,4 +1,4 @@
-package edu.ewubd.objectdetectionwithapi;
+package edu.ewubd.morsevision;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -15,6 +15,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     private TextToSpeech tts;
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
         // Load the preferences from the XML resource
         setPreferencesFromResource(R.xml.preferences, rootKey);
 
@@ -29,7 +30,9 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 return true; // Save the new value
             });
         }
-        SwitchPreferenceCompat darkModeSwitch = findPreference("dark_mode");
+
+        SwitchPreferenceCompat darkModeSwitch = findPreference("light_mode");
+
         if (darkModeSwitch != null) {
             darkModeSwitch.setOnPreferenceChangeListener((preference, newValue) -> {
                 boolean isDarkMode = (boolean) newValue;

@@ -1,13 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
 }
+configurations.all{
+    exclude(group ="com.intellij", module = "annotations")
+}
 
 android {
-    namespace = "edu.ewubd.objectdetectionwithapi"
+    namespace = "edu.ewubd.morsevision"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "edu.ewubd.objectdetectionwithapi"
+        applicationId = "edu.ewubd.morsevision"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

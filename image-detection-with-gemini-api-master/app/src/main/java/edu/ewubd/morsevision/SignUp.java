@@ -1,4 +1,4 @@
-package edu.ewubd.objectdetectionwithapi;
+package edu.ewubd.morsevision;
 
 import static android.content.ContentValues.TAG;
 
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;

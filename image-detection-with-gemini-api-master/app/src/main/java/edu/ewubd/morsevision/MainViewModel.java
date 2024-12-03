@@ -1,15 +1,8 @@
-package edu.ewubd.objectdetectionwithapi;
+package edu.ewubd.morsevision;
 
-import android.graphics.Bitmap;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import com.google.ai.client.generativeai.type.GenerateContentResponse;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
-
-import java.util.concurrent.*;
 
 public class MainViewModel extends ViewModel {
 

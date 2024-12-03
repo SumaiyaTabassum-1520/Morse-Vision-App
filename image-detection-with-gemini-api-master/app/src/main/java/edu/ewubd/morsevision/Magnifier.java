@@ -1,4 +1,4 @@
-package edu.ewubd.objectdetectionwithapi;
+package edu.ewubd.morsevision;
 
 import android.content.pm.PackageManager;
 import android.hardware.Camera;

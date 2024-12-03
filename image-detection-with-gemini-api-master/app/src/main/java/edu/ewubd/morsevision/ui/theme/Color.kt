@@ -1,4 +1,4 @@
-package edu.ewubd.objectdetectionwithapi.ui.theme
+package edu.ewubd.morsevision.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

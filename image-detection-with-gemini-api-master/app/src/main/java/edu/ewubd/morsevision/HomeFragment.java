@@ -1,4 +1,4 @@
-package edu.ewubd.objectdetectionwithapi;
+package edu.ewubd.morsevision;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,10 +54,16 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(getActivity(),Color_Recognition.class);
             startActivity(intent);
         });
-        Button AddFriend = view.findViewById(R.id.friend);
-        AddFriend.setOnClickListener(v -> {
+        Button faceRecognition = view.findViewById(R.id.friend);
+        faceRecognition.setOnClickListener(v -> {
             narrateText("Navigating to Add Friend");
             Intent intent = new Intent(getActivity(), FaceRecognition.AddFriend.class);
+            startActivity(intent);
+        });
+        Button moneyRecognition = view.findViewById(R.id.money);
+        moneyRecognition.setOnClickListener(v -> {
+            narrateText("Navigating to Money recognition");
+            Intent intent = new Intent(getActivity(), MoneyRecognitionActivity.class);
             startActivity(intent);
         });
         // Set an onClickListener for the button for magnifier

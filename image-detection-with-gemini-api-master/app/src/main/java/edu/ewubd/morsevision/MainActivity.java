@@ -1,14 +1,10 @@
-package edu.ewubd.objectdetectionwithapi;
+package edu.ewubd.morsevision;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.speech.tts.TextToSpeech;
 import android.view.MenuItem;
-import android.widget.Switch;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 
@@ -25,7 +21,6 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
     private TextToSpeech tts;
-
 
 
     @Override

@@ -55,6 +55,17 @@
                     android:textSize="35sp"
                     android:layout_marginTop="15dp"
                     tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/money"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/my_button"
+                    android:backgroundTint="@color/midBlue"
+                    android:text="Money Recognition"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText" />
 
                 <!--android:drawableTop="@drawable/logo1"-->
                 <Button

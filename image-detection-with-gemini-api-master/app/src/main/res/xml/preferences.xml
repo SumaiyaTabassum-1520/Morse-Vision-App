@@ -9,7 +9,7 @@
         android:summary="Automatically vibrate image description in Morse code when enabled"
         android:defaultValue="false"/>
     <SwitchPreferenceCompat
-        android:key="dark_mode"
+        android:key="light_mode"
         android:title="Enable Dark Mode"
         android:summary="Switch between light and dark mode"
         android:defaultValue="false" />
